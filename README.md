@@ -3,7 +3,18 @@
 -Create React App
 -Configured TailwindCSS
 -Header
-
+-Routing of App
+-Sign up Form
+-Form Validation
+-useRef Hook
+-Firebase setup
+-Deploying app to production
+-Create SignUp User Account
+-Implement Sign In user APi
+-Created Redux Store with userSlice
+-Implement Sign Out
+-Update Profile
+-fetch from TMDB 
 Login Form
 
 #Feartures
@@ -20,3 +31,9 @@ Login Form
 -NetflixGPT
     -Search Bar
     -Movie Suggestions
+
+-For Firebase deploy
+-npm install -g firebase-tools
+firebase login
+firebase init
+firebase deploy
