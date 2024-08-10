@@ -28,6 +28,13 @@
 -Fetch Data for trailer video
 0 update store with trailer video data
 -Embedded the youtube video and make it autoplay and mute
+-Tailwind  Classes to make Main Container look awesome
+-Build Secondary Component
+-Build Movie List
+-Build Movie Card
+-TMDB Image CDN URL
+-Made Browse page
+-usePoupular upcoming toprated custom hooks.
 
 
 Login Form

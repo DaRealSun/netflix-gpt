@@ -63,7 +63,6 @@ const Login = () => {
                         // ...
                         setErrMessage(error.message)
                     });
-                    console.log(user)
 
                     // ...
                 })

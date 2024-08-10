@@ -1,36 +1,46 @@
-import {auth} from "../utils/firebase";
-import {onAuthStateChanged, signOut} from "firebase/auth";
-import {useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-import {addUser, removeUser} from "../utils/userSlice";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {AVATAR, LOGO} from "../utils/constants";
+import { auth } from "../utils/firebase";
+import { addUser, removeUser } from "../utils/userSlice";
+
 
 const Header = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(store => store.user)
+    const user = useSelector((store) => store.user);
     const handleSignOut = () => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            navigate("/error")
-        });
-    }
+        signOut(auth)
+            .then(() => {})
+            .catch((error) => {
+                navigate("/error");
+            });
+    };
+
+
     useEffect(() => {
-        const unnsubcribe = onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                const {uid, email, displayName, photoURL} = user;
-                dispatch(addUser({uid: uid, email: email, displayName:displayName, photoURL: photoURL}));
-                navigate("/browse")
-                // ...
+                const { uid, email, displayName, photoURL } = user;
+                dispatch(
+                    addUser({
+                        uid: uid,
+                        email: email,
+                        displayName: displayName,
+                        photoURL: photoURL,
+                    })
+                );
+                navigate("/browse");
             } else {
-                // User is signed out
                 dispatch(removeUser());
-                navigate("/")
+                navigate("/");
             }
         });
-        return () => unnsubcribe();
+
+        // Unsiubscribe when component unmounts
+        return () => unsubscribe();
     }, []);
 
     return (
