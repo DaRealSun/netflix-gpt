@@ -1,61 +1,55 @@
-#Netflix GPT
+# 🎬 NetflixGPT
 
--Create React App
--Configured TailwindCSS
--Header
--Routing of App
--Sign up Form
--Form Validation
--useRef Hook
--Firebase setup
--Deploying app to production
--Create SignUp User Account
--Implement Sign In user APi
--Created Redux Store with userSlice
--Implement Sign Out
--Update Profile
--Bugfix: Sign up user displayName and profile picture update
--Bugfix: if the user is not logged in Redirec/browse to Loin Page and vice-versa
--fetch from TMDB 
--Unsubcribed to the onAthStateChanged callback
--Add hardcoded values to the constatnt file
--Register TMDB API & create app & get access to token
--GetData from TMDB now playing movie list API
--Customhook or now playing movies
--Create movie Slice
--Update Store with movies Data
--Planning for Maincontainer & secondary container
--Fetch Data for trailer video
-0 update store with trailer video data
--Embedded the youtube video and make it autoplay and mute
--Tailwind  Classes to make Main Container look awesome
--Build Secondary Component
--Build Movie List
--Build Movie Card
--TMDB Image CDN URL
--Made Browse page
--usePoupular upcoming toprated custom hooks.
+A Netflix-inspired web application powered by React, Redux, and Firebase with GPT-enhanced search functionality. Users can browse movies from TMDB, watch trailers, and get smart movie recommendations.
 
+---
 
-Login Form
+## 🚀 Features
 
-#Feartures
--Login/SignUp
-    -Sign in / Sign up form
-    -Redirect to Browse Page
--Browse(after authentication)
-    -Header
-    -Main Movie
-        -Tailer in Background
-        -Title & Description
-        -MovieSuggestions
-            -MovieLists * N
--NetflixGPT
-    -Search Bar
-    -Movie Suggestions
+### 🔑 Authentication
+- Login / Sign Up with Firebase Authentication
+- Redirect logic:
+  - Redirect to **Browse** page after login
+  - Redirect to **Login** page if user is not authenticated
+- Profile management (update display name & profile picture)
+- Sign Out functionality
 
--For Firebase deploy
--npm install -g firebase-tools
-firebase login
-firebase init
-firebase deploy
+### 🎥 Browse Page (After Authentication)
+- **Header** with navigation
+- **Main Movie**:
+  - Autoplay & muted trailer in background
+  - Title & description overlay
+- **Movie Suggestions**:
+  - Multiple movie lists (Popular, Upcoming, Top Rated, etc.)
+  - Movie cards with posters (TMDB Image CDN)
+
+### 🤖 NetflixGPT (AI Search)
+- GPT-powered search bar
+- Smart movie recommendations based on user queries
+
+### 🔧 App Architecture
+- Redux store setup with `userSlice` and `movieSlice`
+- Custom hooks for fetching:
+  - Now Playing Movies
+  - Popular, Upcoming, Top Rated Movies
+  - Trailer videos
+- Clean file organization & constants for reusable values
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, TailwindCSS, Redux Toolkit
+- **Backend / Auth:** Firebase Authentication
+- **Database & Deployment:** Firebase
+- **API:** TMDB (The Movie Database API), YouTube Embed API
+- **Other Tools:** React Router, Custom Hooks, useRef, useEffect
+
+---
+
+## 📦 Project Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/your-username/netflix-gpt.git
+cd netflix-gpt
